@@ -236,7 +236,7 @@ class MessageableMixin(SendMixin):
         repr=False, default=None
     )  # TODO May need to think of dynamically updating this.
     """The id of the last message sent in this channel (may not point to an existing or valid message)"""
-    default_auto_archive_duration: int = attrs.field(repr=False, default=AutoArchiveDuration.ONE_DAY)
+    default_auto_archive_duration: int = attrs.field(repr=False, default=AutoArchiveDuration.THREE_DAY)
     """Default duration that the clients (not the API) will use for newly created threads, in minutes, to automatically archive the thread after recent activity"""
     last_pin_timestamp: Optional["models.Timestamp"] = attrs.field(
         repr=False, default=None, converter=optional_c(timestamp_converter)
